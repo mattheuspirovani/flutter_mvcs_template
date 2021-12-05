@@ -4,10 +4,10 @@ import 'package:provider/provider.dart';
 import 'app_scaffold.dart';
 import 'models/app_model.dart';
 import 'views/perfil_view.dart';
-import 'injecaodependencia.dart';
+import 'setup_service_locator.dart';
 
 void main() {
-  iniciarInjecaoDependencia();
+  iniciarServiceLocator();
   runApp(const App());
 }
 
