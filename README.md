@@ -16,3 +16,11 @@ Widget build(BuildContext context) {
 ```
 
 Observe que primeiro é recuperada a instância do model (AppModel), que por sua vez é repassada ao construtor *value* da classe **ChangeNotifierProvider**. A partir daí, todos os descentendes desse widget terão acesso a mesma instância do AppModel.
+
+Executado esse processo inicial, é criado o widget *Stateful* **AppScaffold** que, em sua inicialização, deverá invocar rotinas de inicialização do app (recuperação de dados do usuário, prefências do app, etc) e por fim, no build, deverá observar a existência de um usuário. Finalizada a inicialização, não havendo um usuário ele deverá exibir a tela de onboarding, senão será apresentada a tela inicial do app para usuários *logados*. 
+
+A partir da view de Inicio toda a navegação deve ser feita via *Navigator.pushNamed*, lembrando que as rotas são definidas na classe MaterialApp instanciada na classe App.
+
+
+
+

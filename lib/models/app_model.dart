@@ -8,4 +8,11 @@ class AppModel extends ChangeNotifier {
     _usuarioDto = usuario;
     notifyListeners();
   }
+
+  bool _onboardingFinalizado = false;
+  bool get onboardingFinalizado => _onboardingFinalizado;
+  set onboardingFinalizado(bool executar) {
+    _onboardingFinalizado = executar;
+    notifyListeners();
+  }
 }

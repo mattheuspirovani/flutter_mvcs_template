@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mvcs_template/views/onboarding_view.dart';
 import 'package:provider/provider.dart';
 import 'commands/inicializar_app_command.dart';
 import 'dto/usuario_dto.dart';
@@ -34,11 +35,15 @@ class _AppScaffoldState extends State<AppScaffold> {
   Widget build(BuildContext context) {
     UsuarioDto? usuario =
         context.select<AppModel, UsuarioDto?>((value) => value.usuario);
+    bool onboardingFinalizado =
+        context.select<AppModel, bool>((value) => value.onboardingFinalizado);
     if (_inicializandoApp) {
       return const SplashView();
     } else {
       if (usuario != null) {
         return const InicioView();
+      } else if (!onboardingFinalizado) {
+        return const OnboardingView();
       } else {
         return const LoginView();
       }
