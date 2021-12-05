@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mvcs_template/commands/autenticacao/finalizar_onboarding_command.dart';
+import '../commands/autenticacao/finalizar_onboarding_command.dart';
 
 class OnboardingView extends StatelessWidget {
   const OnboardingView({Key? key}) : super(key: key);
