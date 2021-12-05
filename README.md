@@ -4,7 +4,7 @@ Projeto de exemplo usando a arquitetura MVC + S, conforme exemplificado [nesse a
 
 # Ciclo de vida
 
-Na inicialização do app, método main(), é executado o setup do Service Locator (get_it) método inicializarServiceLocator(). A partir daí todos os models, que herdam de ChangeNotifier, devem ser utilizados através do construtor *value* da classe ChangeNotifierProvider. O exemplo a seguir, ilustra melhor o cenário:
+Na inicialização do app, método **main()**, é executado o setup do Service Locator (get_it) método **inicializarServiceLocator()**. A partir daí todos os models, que herdam de ChangeNotifier, devem ser utilizados através do construtor *value* da classe **ChangeNotifierProvider**. O exemplo a seguir, ilustra melhor o cenário:
 
 ```
 Widget build(BuildContext context) {
@@ -15,4 +15,4 @@ Widget build(BuildContext context) {
         child: Builder(builder: (context) {
 ```
 
-Observe que primeiro é recuperada a instância do model (AppModel), que por sua vez é repassada ao construtor value da classe ChangeNotifierProvider. A partir daí, todos os descentendes desse widget terão acesso a mesma instância do AppModel.
+Observe que primeiro é recuperada a instância do model (AppModel), que por sua vez é repassada ao construtor *value* da classe **ChangeNotifierProvider**. A partir daí, todos os descentendes desse widget terão acesso a mesma instância do AppModel.
