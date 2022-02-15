@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
+import 'config/environment.dart';
 import 'package:provider/provider.dart';
 import 'app_scaffold.dart';
 import 'models/app_model.dart';
@@ -8,6 +9,11 @@ import 'setup_service_locator.dart';
 
 void main() {
   iniciarServiceLocator();
+  const String environment = String.fromEnvironment(
+    'ENVIRONMENT',
+    defaultValue: Environment.dev,
+  );
+  Environment().initConfig(environment);
   runApp(const App());
 }
 
